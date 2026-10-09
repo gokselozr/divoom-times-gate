@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.local.json
+output/
+*.log
+build/
+dist/
+releases/
+*.stackdump
+*.tmp
