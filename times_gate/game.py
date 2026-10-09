@@ -5,15 +5,16 @@ from dataclasses import dataclass
 from functools import lru_cache
 import io
 import math
-import random
 import sys
 import time
 from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from .pixel import (AMBER, BARK, CLAY, CORAL, CREAM, EMBER, FOG, INK, LEMON, MIST, NAVY, PLUM, SLATE,
-                    SNOW, STEEL, WOOD, outlined, timed)
+from . import pixel as _palette
+from .pixel import (AMBER, BARK, CLAY, CORAL, CREAM, DEEP, EMBER, FOG, GRASS, INK, LEAF, LEMON, MIST, NAVY, RUST,
+                    SKY, SLATE, STEEL, WOOD, timed)
+from .render import GLYPHS as _glyphs
 from .render import ascii_text, centered, right, text
 
 LEAF = "#63c74d"
@@ -449,11 +450,6 @@ class GameReader:
 
 
 # --- Panels --------------------------------------------------------------------------------
-
-# Keep the scene colours in the shared palette, including posterized real artwork.
-from . import pixel as _palette
-from .pixel import DEEP, GRASS, LEAF, RUST, SKY
-from .render import GLYPHS as _glyphs
 
 
 def frame_box(draw, accent):

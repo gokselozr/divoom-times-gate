@@ -6,7 +6,6 @@ from unittest.mock import patch, Mock
 
 import app
 from times_gate.codex import Snapshot
-from times_gate.render import render, Board
 from times_gate.polling import AsyncSource
 
 

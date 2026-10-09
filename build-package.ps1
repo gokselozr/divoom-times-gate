@@ -9,7 +9,7 @@ if (-not (Test-Path -LiteralPath $packagePython)) {
 if ($LASTEXITCODE -ne 0) { throw 'Could not install the packaging dependencies.' }
 & $packagePython -m unittest discover -s tests
 if ($LASTEXITCODE -ne 0) { throw 'Tests failed; no package was built.' }
-& $packagePython -m PyInstaller --noconfirm TimesGate.spec
+& $packagePython -m PyInstaller --noconfirm windows\TimesGate.spec
 if ($LASTEXITCODE -ne 0) { throw 'The EXE build failed.' }
-& $packagePython package_release.py
+& $packagePython windows\package_release.py
 if ($LASTEXITCODE -ne 0) { throw 'Could not create the release ZIP.' }

@@ -3,7 +3,8 @@ from pathlib import Path
 import sys
 from importlib.metadata import distribution
 
-project=Path(SPECPATH)
+# The spec lives in windows/; the code it packages is one level up.
+project=Path(SPECPATH).parent
 licenses=[]
 python_license=Path(sys.base_prefix)/"LICENSE.txt"
 if python_license.is_file():

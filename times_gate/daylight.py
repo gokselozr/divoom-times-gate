@@ -9,7 +9,7 @@ import time
 from PIL import Image, ImageDraw
 
 from .pixel import (AMBER, BARK, CLAY, CORAL, CREAM, DEEP, FOREST, GRASS, ICE, INK, LEAF, LEMON, MIST, NAVY,
-                    PEACH, PINE, PLUM, ROSE, SAND, SKY, SLATE, SNOW, STEEL, WOOD, BAYER, gradient, outlined, timed)
+                    PEACH, PINE, PLUM, ROSE, SAND, SKY, SLATE, SNOW, STEEL, WOOD, outlined, timed)
 from .knight import knight_frames
 from .render import DAYS, MONTHS, centered, right, text
 

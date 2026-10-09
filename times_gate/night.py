@@ -14,9 +14,6 @@ from .pixel import (AMBER, BARK, CLAY, CORAL, CREAM, EMBER, FLAME, FOG, FOREST,
 from .render import DAYS, MONTHS, centered, text
 
 TITLES = ("RAIN", "CAMPFIRE", "MOON", "COFFEE", "CAT NAP")
-PANES = ((7, 7, 61, 57), (66, 7, 120, 57), (7, 62, 61, 105), (66, 62, 120, 105))
-
-
 # --- Rain: outside rain, glass beads, then the wooden frame ---------------------
 
 @lru_cache(maxsize=1)
@@ -274,8 +271,6 @@ def phase_name(angle):
     return names[round(angle / (2 * math.pi) * 8) % 8]
 
 
-CRATERS = ((-0.35, -0.3, 0.22), (0.25, -0.4, 0.14), (0.1, 0.15, 0.28),
-           (-0.4, 0.35, 0.12), (0.45, 0.3, 0.1))
 
 
 @lru_cache(maxsize=4)

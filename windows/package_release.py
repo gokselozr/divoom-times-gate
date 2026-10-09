@@ -4,7 +4,7 @@ from pathlib import Path
 import shutil
 import zipfile
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[1]
 
 
 def package():
@@ -12,7 +12,7 @@ def package():
     for name in ("TimesGate.exe","TimesGateCLI.exe"):
         if not (bundle/name).is_file():
             raise ValueError(f"Built {name} not found.")
-    shutil.copyfile(ROOT/"PORTABLE-README.txt",bundle/"README.txt")
+    shutil.copyfile(ROOT/"windows/PORTABLE-README.txt",bundle/"README.txt")
     paths=[]
     for path in bundle.rglob("*"):
         if not path.is_file():

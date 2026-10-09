@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 import zipfile
 
-import package_release
+from windows import package_release
 import setup_claude
 from times_gate import runtime
 
@@ -69,7 +69,8 @@ class DistributionTests(unittest.TestCase):
         (bundle/"_internal").mkdir(parents=True)
         for name in ("TimesGate.exe","TimesGateCLI.exe","_internal/python313.dll"):
             (bundle/name).write_bytes(b"runtime")
-        (root/"PORTABLE-README.txt").write_text("Instructions")
+        (root/"windows").mkdir()
+        (root/"windows/PORTABLE-README.txt").write_text("Instructions")
         (root/"config.local.json").write_text("PRIVATE CONFIG")
         (root/"secrets.local.json").write_text("PRIVATE TOKEN")
         return bundle

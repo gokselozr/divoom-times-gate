@@ -12,7 +12,7 @@ import zipfile
 
 from PIL import Image, ImageGrab
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[1]
 
 
 def windows_for(pid):
